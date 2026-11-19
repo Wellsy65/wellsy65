@@ -1,16 +1,31 @@
 ---
+import releases from '../data/releases.json';
+import '../styles/global.css';
+const profile = 'https://soundcloud.com/wellsy65';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+<title>Wellsy65 — Music. Reimagined.</title>
+<meta name="description" content="Explore music creations, edits and DJ mixes from Wellsy65. From deep house to euphoric club sounds. Find your next listening escape." />
+<link rel="canonical" href="https://wellsy65.com/" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="theme-color" content="#111210" />
+<meta property="og:title" content="Wellsy65 — Music. Reimagined." /><meta property="og:description" content="Music creations, fresh edits and DJ mixes. Made for the feeling." /><meta property="og:type" content="website" /><meta property="og:url" content="https://wellsy65.com/" /><meta property="og:image" content="https://wellsy65.com/artwork/pyrenees.jpg" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header wrap"><a href="#" class="logo" aria-label="Wellsy65 home">WELLSY<span>65</span><i></i></a><nav aria-label="Main navigation"><a href="#music">Music</a><a href="#mixes">DJ mixes</a><a href="#about">About</a></nav><a class="header-listen" href={profile} target="_blank" rel="noopener noreferrer">SoundCloud <span>↗</span></a></header>
+<main id="main">
+<section class="hero wrap">
+<div class="hero-copy"><p class="eyebrow"><span class="dot"></span> INDEPENDENT SOUND. NO BOUNDARIES.</p><h1>Music.<br/><em>Reimagined.</em></h1><p class="intro">Familiar feelings. Unexpected directions.<br/>Music creations and DJ mixes from Wellsy65.</p><div class="actions"><a class="button" href="#music">Explore the music <span>↗</span></a><a class="text-link" href="#mixes"><span class="play">▶</span> Get into the mix</a></div><div class="hero-note"><span>TURN IT UP. TUNE EVERYTHING ELSE OUT.</span><span>SCROLL TO EXPLORE ↓</span></div></div>
+<div class="record-scene" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="record"><div class="record-label"><span>WELLSY65</span><b>FEEL<br/>THE<br/>SOUND.</b><small>SIDE A · PLAY LOUD</small><i></i></div></div><span class="scene-caption">A LITTLE ESCAPE.<br/>A LOT OF FEELING.</span><span class="scene-number">65 / 01</span></div>
+</section>
+<div class="genre-strip"><div class="wrap">DEEP HOUSE <span>✳</span> AFRO HOUSE <span>✳</span> EUPHORIC CLUB <span>✳</span> REIMAGINED SOUNDS <span>✳</span> DJ MIXES</div></div>
+<section id="music" class="section wrap"><div class="section-heading"><div><p class="eyebrow">01 / MUSIC CREATIONS</p><h2>Find your frequency.</h2></div><a class="text-link" href={`${profile}/tracks`} target="_blank" rel="noopener noreferrer">All tracks on SoundCloud ↗</a></div><p class="section-intro">New ideas, fresh edits and sounds that take the scenic route.</p><div class="release-grid">{releases.filter(r => r.title).map((r,index) => <a class="release" href={r.url} target="_blank" rel="noopener noreferrer"><div class="cover"><img src={r.artwork} alt={`${r.title} cover artwork`} loading="lazy" width="600" height="600"/><span class="cover-play" aria-hidden="true">▶</span><span class="cover-index">0{index+1}</span></div><div class="release-meta"><div><p>WELLSY65 / MUSIC CREATION</p><h3>{r.title}</h3></div><span aria-hidden="true">↗</span></div></a>)}</div></section>
+<section id="mixes" class="mix-section"><div class="wrap mix-layout"><div class="mix-art" aria-hidden="true"><span class="mix-word">IN THE<br/><em>MIX.</em></span><div class="waveform">{Array.from({length:50},(_,i)=><i style={`--h:${18+((i*37+i*i*11)%110)}px`}></i>)}</div><span class="mix-art-footer">WELLSY65 / SELECTED & MIXED</span></div><div class="mix-copy"><p class="eyebrow">02 / DJ MIXES</p><h2>Lose track<br/>of time.</h2><p>A different kind of journey. Discover DJ mixes and curated selections, moving from laid-back grooves to dancefloor energy.</p><a class="button" href={`${profile}/sets`} target="_blank" rel="noopener noreferrer">Explore mixes & playlists <span>↗</span></a><p class="small-note">Listen on SoundCloud. Find a mood. Settle in.</p></div></div></section>
+<section id="about" class="section wrap about"><div><p class="eyebrow">03 / BEHIND THE SOUND</p><h2>Curiosity.<br/>Creativity.<br/><em>Volume.</em></h2></div><div class="about-copy"><p class="large-copy">Wellsy65 is the creative music home of Ian Wells.</p><p>A space to explore ideas, reimagine sounds and follow a musical thought wherever it leads. From deep and Afro house to euphoric vocals, rock-inspired experiments and late-night grooves.</p><p>The thread running through it all? Music that makes you feel something.</p><a class="text-link" href={profile} target="_blank" rel="noopener noreferrer">Follow the journey on SoundCloud ↗</a></div></section>
+<section class="closing wrap"><p class="eyebrow">GOOD MUSIC DESERVES GOOD VOLUME.</p><h2>Your next escape<br/>starts with <em>play.</em></h2><a class="button" href={profile} target="_blank" rel="noopener noreferrer">Listen to Wellsy65 <span>↗</span></a></section>
+</main><footer class="wrap footer"><a class="logo" href="#">WELLSY<span>65</span><i></i></a><p>© {new Date().getFullYear()} Wellsy65 · Ian Wells</p><a href="#">Back to top ↑</a></footer>
+</body></html>

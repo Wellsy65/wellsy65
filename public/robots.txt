@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wellsy65.com/sitemap.xml
